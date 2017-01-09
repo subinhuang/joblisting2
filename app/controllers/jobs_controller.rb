@@ -17,7 +17,8 @@ before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destro
   end
 
   def create
-    @job =Job.new(job_params)
+    @job = Job.new(job_params)
+
     if @job.save
       redirect_to jobs_path
     else
@@ -26,7 +27,7 @@ before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destro
   end
 
   def update
-    @job =Job.find(params[:id])
+    @job = Job.find(params[:id])
     if @job.update(job_params)
       redirect_to jobs_path
     else
@@ -43,6 +44,6 @@ before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destro
 
 private
 def job_params
-  params.require(:job).permit(:titile, :description)
+  params.require(:job).permit(:title, :description)
 end
 end

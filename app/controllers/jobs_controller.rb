@@ -16,7 +16,7 @@ before_action :require_is_admin, only: [:new, :create, :update, :edit, :destroy 
     when 'by_upper_bound'
       Job.published.order('wage_upper_bound DESC')
     else
-      Job.published.order("created_at DESC")
+      Job.published.recent
     end
   end
 

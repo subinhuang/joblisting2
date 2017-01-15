@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20170114103813) do
     t.integer  "wage_upper_bound"
     t.integer  "wage_lower_bound"
     t.string   "contact_email"
-    t.boolean  "is_admin",         default: true
     t.boolean  "is_hidden",        default: true
   end
 
